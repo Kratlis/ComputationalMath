@@ -1,8 +1,8 @@
 package integral.function;
 
 public class Function {
-    private int number;
-    private double accuracy;
+    private final int number;
+    private final double accuracy;
 
     public Function(int number, double accuracy) {
         this.number = number;

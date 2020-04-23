@@ -9,19 +9,19 @@ public class Reader {
         this.in = in;
     }
 
-    public double readDouble(){
-        try{
+    public double readDouble() {
+        try {
             return Double.parseDouble(in.next().split(" ")[0].replace(",", "."));
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Возникла ошибка при вводе числа. Введите число ещё раз, пожалуйста.");
             return readDouble();
         }
     }
 
-    public int readInt(){
-        try{
+    public int readInt() {
+        try {
             return Integer.parseInt(in.next().split(" ")[0].replace(",", "."));
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Возникла ошибка при вводе числа. Введите число ещё раз, пожалуйста.");
             return readInt();
         }
@@ -39,7 +39,7 @@ public class Reader {
         throw new IllegalArgumentException();
     }
 
-    public String readFileName(){
+    public String readFileName() {
         return in.nextLine();
     }
 }

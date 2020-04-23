@@ -3,7 +3,7 @@ package equationSystem.fileWorkers;
 import java.util.Scanner;
 
 public class FileParser {
-    private String systemInString;
+    private final String systemInString;
     private Scanner in;
 
     public FileParser(String string) {
@@ -30,8 +30,8 @@ public class FileParser {
                 } else {
                     try {
                         a[i][j] = in.nextDouble();
-                    } catch (Exception e){
-                        System.out.println("Не удалось считать число: "+e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("Не удалось считать число: " + e.getMessage());
                     }
                 }
             }
@@ -55,7 +55,7 @@ public class FileParser {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= n; j++) {
                 if (j == n) {
-                    b[i] = Double.parseDouble(in.next().split(" ")[0].replace(",", "."));;
+                    b[i] = Double.parseDouble(in.next().split(" ")[0].replace(",", "."));
                 } else {
                     in.next();
                 }

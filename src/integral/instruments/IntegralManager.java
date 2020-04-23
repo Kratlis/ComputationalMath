@@ -7,10 +7,10 @@ import integral.integralls.MiddleRectanglesIntegral;
 import integral.integralls.RightRectanglesIntegral;
 
 public class IntegralManager {
+    private final Function function;
     private double accuracy;
     private double lowerLimit;
     private double upperLimit;
-    private Function function;
     private double h;
     private int n;
     private double difference;
@@ -23,7 +23,7 @@ public class IntegralManager {
         return true;
     }
 
-    public boolean hasEssentialDiscontinuity(){
+    public boolean hasEssentialDiscontinuity() {
         switch (function.getNumber()) {
             case 2:
                 if ((lowerLimit <= -1 && upperLimit >= -1) || (lowerLimit <= 1 && upperLimit >= 1)) {

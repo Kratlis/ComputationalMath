@@ -10,11 +10,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class SystemManager {
+    private final SystemChecker systemChecker = new SystemChecker();
+    private final SystemSolver systemSolver = new SystemSolver();
     private EquationSystem equationSystem;
-    private SystemChecker systemChecker = new SystemChecker();
-    private SystemSolver systemSolver = new SystemSolver();
 
-    public SystemManager() {}
+    public SystemManager() {
+    }
 
     public void setAccuracy(double accuracy) {
         systemSolver.setAccuracy(accuracy);
@@ -26,7 +27,7 @@ public class SystemManager {
             double[] x;
             try {
                 x = systemSolver.findSolution();
-            } catch (ArithmeticException e){
+            } catch (ArithmeticException e) {
                 System.out.println("Решение не сходится.");
                 x = systemSolver.getCurrentX();
             }
@@ -35,7 +36,7 @@ public class SystemManager {
             for (int i = 0; i < x.length; i++) {
                 artist.drawTableLine(x[i], dif[i]);
             }
-            System.out.println("Количество итераций: "+systemSolver.getIterationCounter());
+            System.out.println("Количество итераций: " + systemSolver.getIterationCounter());
         } else System.out.println("Измените матрицу.");
     }
 
@@ -86,12 +87,12 @@ public class SystemManager {
         prepareCheckerAndSolver();
     }
 
-    private void writeSystem(){
+    private void writeSystem() {
         Artist artist = new Artist(System.out);
         artist.drawSystem(equationSystem);
     }
 
-    private void prepareCheckerAndSolver(){
+    private void prepareCheckerAndSolver() {
         systemChecker.setEquationSystem(equationSystem);
         systemSolver.build(equationSystem);
     }

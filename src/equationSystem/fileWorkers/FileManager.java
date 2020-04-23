@@ -9,10 +9,11 @@ public class FileManager {
     private File workFile;
 
     public FileManager(String fileName) {
-        while (!checkFileUse(fileName)){
+        while (!checkFileUse(fileName)) {
             System.out.println("Файл не может быть использован. Введите имя файла.");
             fileName = new Scanner(System.in).next();
-        } workFile = new File(fileName);
+        }
+        workFile = new File(fileName);
     }
 
     public String readFile() throws FileNotFoundException {
@@ -25,7 +26,7 @@ public class FileManager {
         return s.toString();
     }
 
-    private boolean checkFileUse(String fileName){
+    private boolean checkFileUse(String fileName) {
         File file = new File(fileName);
         if (file.exists()) {
             if (file.isFile()) {
@@ -49,7 +50,7 @@ public class FileManager {
                 }
                 return false;
             }
-        }else {
+        } else {
             System.out.println("Файл не найден.");
             return false;
         }

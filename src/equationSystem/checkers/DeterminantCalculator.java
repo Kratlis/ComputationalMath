@@ -27,10 +27,10 @@ public class DeterminantCalculator {
         if (a.length != 2) {
             int minorRow = 0;
             for (int i = 0; i < a.length; i++) {
-                System.out.println(a.length+"\t"+i);
+                System.out.println(a.length + "\t" + i);
                 minor += Math.pow(-1, minorRow + i) * a[minorRow][i] * calculateMinor(minorRow, i, a);
             }
-            if (a.length == 20){
+            if (a.length == 20) {
                 System.out.println(10);
             }
         } else {

@@ -14,10 +14,10 @@ public class Reader {
         try {
             return Double.parseDouble(string);
         } catch (Exception e) {
-            if (string.matches("((-)?([0-9])*)(pi)")){
-                try{
+            if (string.matches("((-)?([0-9])*)(pi)")) {
+                try {
                     return readPI(string);
-                } catch (Exception e1){
+                } catch (Exception e1) {
                     System.out.println("Возникла ошибка при распознавании коэффициента числа pi." +
                             " Введите число ещё раз, пожалуйста.");
                     return readDouble();
@@ -39,10 +39,10 @@ public class Reader {
 
     private double readPI(String string) throws Exception {
         String coefficient = string.split("pi")[0];
-        try{
+        try {
             return Double.parseDouble(coefficient) * Math.PI;
-        } catch (Exception e1){
-            if (coefficient.equals("-")){
+        } catch (Exception e1) {
+            if (coefficient.equals("-")) {
                 return -Math.PI;
             }
             throw new Exception();

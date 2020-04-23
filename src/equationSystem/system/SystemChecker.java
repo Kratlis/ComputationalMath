@@ -11,7 +11,8 @@ public class SystemChecker {
     EquationSystem equationSystem;
     CoefficientChecker coefficientChecker;
 
-    public SystemChecker() {}
+    public SystemChecker() {
+    }
 
     public boolean correctSystem() {
         if (checkDiagonal()) {
@@ -114,7 +115,7 @@ public class SystemChecker {
         equationSystem.getB()[secondRow] = n;
     }
 
-    private boolean proceed(){
+    private boolean proceed() {
         Reader reader = new Reader(new Scanner(System.in));
         return reader.yesNoAnswer();
     }
