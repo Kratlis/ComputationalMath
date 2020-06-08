@@ -37,7 +37,7 @@ public class Commander {
         manager.drawGraph();
     }
 
-    private void readEquationNumber(){
+    private void readEquationNumber() {
         System.out.println("Выберите дифференциальное уравнение и введите его номер:");
         int number = reader.readIntBounded(1, 3);
         manager.setType(number);
