@@ -46,18 +46,6 @@ public class Reader {
         return num;
     }
 
-    public boolean isYes() throws IllegalArgumentException {
-        Scanner scanner = new Scanner(System.in);
-        String answer = scanner.next();
-        if (answer.equals("y") || answer.equals("да") || answer.equals("yes")) {
-            return true;
-        }
-        if (answer.equals("n") || answer.equals("нет") || answer.equals("no")) {
-            return false;
-        }
-        throw new IllegalArgumentException();
-    }
-
     private double readPI(String string) throws Exception {
         String coefficient = string.split("pi")[0];
         try {
